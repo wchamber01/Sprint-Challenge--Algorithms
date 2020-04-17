@@ -99,55 +99,65 @@ class SortingRobot:
         # Fill this out
         
         # Bubble Sort
-        # if the robot light is on
         # starting at the farthest left position in the list
-        # pick up the first card in the list and compare it to each card to the right
-        # if there is a card that is smaller then swap the card in hand with the smaller card
-        # place new smallest card in the farthest left position
+        # if holding no cards
+        # pick up the first card in the list and compare it to the card on the right
+        # if the card on the right is smaller than card in hand, swap the card in hand with the smaller card
+        # move left one space and swap with card in that space
         # move right one space and repeat above process until you can no longer move right
+        # repeat until no card swaps have happened
         
         # self.sort_bot()
-    def sort_bot(self):
+    # def sort_bot(self):
         counter = 0
     
         if self.compare_item == None:
+            print(compare_item())
             self.swap_item() #pick up first item in list
-            self.set_light_on == True
-    
-    def move_right_swap(self):        
-        while self.can_move_right == True:
+            
+        if self.can_move_right == True:    
+            self.set_light_on == True #light on when moving towards right
             self.move_right()
             # counter +=1
             # return counter
-            
-            if self.compare_item() == 1:
+            if self.compare_item() == None:
+                print(compare_item())
+                self.swap_item()
+                return
+            elif self.compare_item() == 0:
+                print(compare_item())
+                return
+            elif self.compare_item() == 1:
+                print(compare_item())
                 self.swap_item()
                 self.move_left()
                 # counter +=1
                 # return counter
-                
-                if self.compare_item() == None:
-                    self.swap_item()
-                    self.set_light_off == True
-                    self.move_right
-                if self.compare_item() == None:
-                    self.swap_item()
-                    move_right_swap(self)
-            
-            while self.can_move_left == True:
-                self.move_left()
-                # counter +=1
-                # return counter
-                if self.compare_item() == -1:
-                    self.swap_item()
+                self.swap_item()
+                return
+        elif self.can_move_left == True:
+            self.set_light_on == False #light off when moving towards left
+            self.move_left()
+            # counter +=1
+            # return counter
+            if self.compare_item() == None:
+                print(compare_item())
+                self.swap_item()
+                return
+            elif self.compare_item() == 0:
+                print(compare_item())
+                return
+            elif self.compare_item() == -1:
+                self.swap_item()
                 self.move_right()
                 # counter +=1
                 # return counter
                 self.swap_item()
-                self.move_left()
-
-
-
+                return
+            elif self.compare_item == 1:
+                print(compare_item())
+                self.swap_item()
+                return
 
 
 if __name__ == "__main__":
