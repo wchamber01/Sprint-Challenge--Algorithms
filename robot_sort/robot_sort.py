@@ -97,54 +97,61 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        
+        # Bubble Sort
+        # if the robot light is on
+        # starting at the farthest left position in the list
+        # pick up the first card in the list and compare it to each card to the right
+        # if there is a card that is smaller then swap the card in hand with the smaller card
+        # place new smallest card in the farthest left position
+        # move right one space and repeat above process until you can no longer move right
+        
+        # self.sort_bot()
+    def sort_bot(self):
+        counter = 0
+    
+        if self.compare_item == None:
+            self.swap_item() #pick up first item in list
+            self.set_light_on == True
+    
+    def move_right_swap(self):        
+        while self.can_move_right == True:
+            self.move_right()
+            # counter +=1
+            # return counter
+            
+            if self.compare_item() == 1:
+                self.swap_item()
+                self.move_left()
+                # counter +=1
+                # return counter
+                
+                if self.compare_item() == None:
+                    self.swap_item()
+                    self.set_light_off == True
+                    self.move_right
+                if self.compare_item() == None:
+                    self.swap_item()
+                    move_right_swap(self)
+            
+            while self.can_move_left == True:
+                self.move_left()
+                # counter +=1
+                # return counter
+                if self.compare_item() == -1:
+                    self.swap_item()
+                self.move_right()
+                # counter +=1
+                # return counter
+                self.swap_item()
+                self.move_left()
 
-
-def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
-    # TO-DO
-    #Merge them back together by comparing the first value of each array
-    #and adding the smaller of the 2 arrays to the results
-    merge_sort(arrA)
-    merge_sort(arrB)
-    a=0
-    b=0
-    for i in range(elements):
-        if a >= len(arrA):
-            merged_arr[i] = arrB[b]
-            b+=1
-        elif b>= len(arrB):
-            merged_arr[i] = arrA[a]
-            a+=1
-        elif arrA[a] < arrB[b]:
-            merged_arr[i] = arrA[a]
-            a+=1
-        else:
-            merged_arr[i]=arrB[b]
-            b+=1
-    return merged_arr
-
-# TO-DO: implement the Merge Sort function below USING RECURSION
-def merge_sort( arr ):
-    # TO-DO
-    if len(arr) <= 1:
-        return arr
-    #Split the arrays into half
-    left = arr[:len(arr) // 2]
-    right = arr[len(arr) // 2:]
-    #Sort each half
-    left = merge_sort(left)
-    right = merge_sort(right)
-    #Merge them back together and return 
-    return merge(left, right)
-    merge_sort(arr)
 
 
 
 
 if __name__ == "__main__":
-    # Test our your implementation from the command line
+    # Test out your implementation from the command line
     # with `python robot_sort.py`
 
     l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
