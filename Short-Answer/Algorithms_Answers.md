@@ -2,9 +2,9 @@
 
 ## Exercise I
 
-a)O(1) - Because this is a constant operation. Constant time means the running time is constant, it’s not affected by the input size.
+a)O(n) - Because this is loop whose duration is dependant upon the value of 'n' and will take 'n' arguments.
 
-b) O(log(n)) - In mathematics, the logarithm is the inverse function to exponentiation. That means the logarithm of a given number x is the exponent to which another fixed number, the base b, must be raised, to produce that number x. For every time j doubles the sum increases by 1. J is the log of the sum.
+b) O(n\*log(n)) - In mathematics, the logarithm is the inverse function to exponentiation. That means the logarithm of a given number x is the exponent to which another fixed number, the base n, must be raised, to produce that number x. For every time j doubles the sum increases by 1 which is 0(log(n)). J is the log of the sum. The function also loops through 'n' times until reaching 'n' which is O(n)
 
 c)O(n) - This is a recursive problem. It has a base case. It calls itself. The value changes towards itself i.e. (n-1) each time it recurses.
 
